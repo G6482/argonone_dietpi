@@ -3,30 +3,8 @@ This script adapted for the **DietPi** operating system, installs the scripts an
 
 ## Installation instruction:
 
-Run from terminal: `curl https://raw.githubusercontent.com/gwylanscheeren/argonone_dietpi/master/argon1.sh | bash`
+Run from terminal: `curl https://raw.githubusercontent.com/G6482/argonone_dietpi/master/argon1.sh | bash`
 
 ## Change fan settings:
 
 Run from terminal: `argoneone-config`
-
-&nbsp;  
-&nbsp;  
-&nbsp;  
-&nbsp;  
-
-### Changes made to the original script:
-#### In order to adapt the script to the DietPi operating system I replaced the following lines:
-
-`sudo raspi-config nonint do_i2c 0`  
-`sudo raspi-config nonint do_serial 0`
-
-to:
-
-`sudo /DietPi/dietpi/func/dietpi-set_hardware i2c enable || sudo /boot/dietpi/func/dietpi-set_hardware i2c enable`  
-`sudo /DietPi/dietpi/func/dietpi-set_hardware serialconsole enable || sudo /boot/dietpi/func/dietpi-set_hardware serialconsole enable`
-
-#### Furthermore I removed the warning and confirmation step before the menu appears from `argonone-config`. And changed initial temperature=fan speed pairs to:
-50=1  
-55=20  
-60=80  
-65=100
