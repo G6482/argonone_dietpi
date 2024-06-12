@@ -21,7 +21,7 @@ argon_check_pkg() {
 sudo /boot/dietpi/func/dietpi-set_hardware i2c enable
 sudo /boot/dietpi/func/dietpi-set_hardware serialconsole enable
 
-pkglist=(raspi-gpio python-rpi.gpio python3-rpi.gpio python-smbus python3-smbus i2c-tools)
+pkglist=(rpi.gpio-common python3-rpi.gpio python3-smbus i2c-tools)
 for curpkg in ${pkglist[@]}; do
 	sudo apt-get install -y $curpkg
 	RESULT=$(argon_check_pkg "$curpkg")
